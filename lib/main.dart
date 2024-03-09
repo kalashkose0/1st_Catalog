@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1_catalog/home_page.dart';
+import 'package:flutter_application_1_catalog/pages/home_page.dart';
+import 'package:flutter_application_1_catalog/pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,8 +30,22 @@ class MyApp extends StatelessWidget {
     // const pi = 3.14;
     // final // can be changeable
 
+    // return MaterialApp(
+    //   home: HomePage(),
+    // );
+
     return MaterialApp(
-      home: HomePage(),
-    );
+        // home: HomePage(),
+        // themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
+        theme: ThemeData(primaryColor: Colors.deepPurple),
+        darkTheme: ThemeData(brightness: Brightness.dark),
+        initialRoute: "/",
+        routes: {
+          "/": (context) => LoginPage(),
+          "/home" :(context) => HomePage(),
+           "/login": (context) => LoginPage()
+        }
+        );
   }
 }
