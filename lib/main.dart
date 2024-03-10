@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1_catalog/pages/home_page.dart';
 import 'package:flutter_application_1_catalog/pages/login_page.dart';
+import 'package:flutter_application_1_catalog/utils/routes.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +15,7 @@ class MyApp extends StatelessWidget {
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
 //       home: Container(
+
 //         child: Text("Hello Gyes"),
 //       ),//container
 //     );//Material App
@@ -35,17 +38,21 @@ class MyApp extends StatelessWidget {
     // );
 
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         // home: HomePage(),
         // themeMode: ThemeMode.dark,
         themeMode: ThemeMode.light,
-        theme: ThemeData(primaryColor: Colors.deepPurple),
+        theme: ThemeData(
+          primaryColor: Colors.deepPurple,
+          fontFamily: GoogleFonts.lato().fontFamily,
+          // primaryTextTheme: GoogleFonts.latoTextTheme()
+        ),
         darkTheme: ThemeData(brightness: Brightness.dark),
         initialRoute: "/",
         routes: {
           "/": (context) => LoginPage(),
-          "/home" :(context) => HomePage(),
-           "/login": (context) => LoginPage()
-        }
-        );
+          MyRoutes.homeRoutes: (context) => HomePage(),
+          MyRoutes.loginRoutes: (context) => LoginPage()
+        });
   }
 }
