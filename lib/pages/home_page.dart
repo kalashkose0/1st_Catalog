@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
           child: Text("$days. 😎 Hello Mst $name 👌"),
         ),
       ),
-      drawer: Drawer(
+      drawer: const Drawer(
         child: Center(
           child: Text("hello HERE 😒"),
         ),

@@ -5,7 +5,7 @@ import 'package:flutter_application_1_catalog/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
